@@ -3,9 +3,9 @@
 $accent: #CF6679;
 $text: #e8eef2;
 $light-grey: #494f5c;
-$dark-grey: #121212;
+$dark-grey: #303030;
 $highlight-grey: #7d828a;
-$midnightblue: #000000;
+$midnightblue: #252525;
 
 // Fonts
 //
@@ -22,7 +22,7 @@ $code-fonts: Consolas, "Andale Mono WT", "Andale Mono", Menlo, Monaco, "Lucida C
   a {
     word-wrap: break-word;
     border: none;
-    box-shadow: inset 0 -4px 0 $accent;
+    box-shadow: inset 0 -1px 0 $accent;
     transition-property: box-shadow;
     transition-duration: .1s;
 
