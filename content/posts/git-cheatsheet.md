@@ -47,7 +47,7 @@ $ git branch -M main
 $ git remote add origin git@github.com:aleoponcelet/<repo>.git
 $ git push -u origin main
 ```
-
+---
 ## Create
 
 From existing data

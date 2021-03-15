@@ -6,32 +6,38 @@ featuredImg: ""
 tags: 
   - linux
 ---
-* Dell Inspiron 3480
-  + i5-8265U CPU
-  + 8 GB Memory
-  + 250 GB Storage
----
-1. Set a Spanish keyboard layout 
+Dell Inspiron 3480
+
+- [First steps](#first-steps)
+- [Installation](#installation)
+- [Settings](#settings)
+- [Bootloader](#bootloader)
+- [Personal user](#personal-user)
+- [Last things](#last-things)
+
+
+### First steps
+Set a Spanish keyboard layout 
 
 ```
 # loadkeys la-latin1
 ```
-2. Connect to the internet via Wi-Fi
+Connect to the internet via Wi-Fi
 ```
 # iwctl
 # device list
 # station wlp2s0 connect SSID
 # ping archlinux.org
 ```
----
-3. Update the system clock
+
+Update the system clock
 ```
 # timedatectl set-ntp true
 # timedatectl set-timezone America/Mexico_City
 # timedatectl status
 ```
----
-4. Partition the disks
+
+Partition the disks
 ```
 # fdisk -l
 # cfdisk /dev/nvme0n1
@@ -46,7 +52,7 @@ GUID Partition Table (gpt)
 | nvme0n1p4	    |    7 GB     |            swap |
 
 ---
-5. Installation
+### Installation
 
 * Format
 ```
@@ -79,10 +85,10 @@ Essential packages
 ```
 Complement packages
 ```
-# pacstrap /mnt zsh git go xdg-user-dirs nano networkmanager dhcpcd netctl wpa_supplicant dialog xorg mesa mesa-demos xf86-video-intel intel-ucode gnome
+# pacstrap /mnt zsh git go xdg-user-dirs nano networkmanager dhcpcd netctl wpa_supplicant dialog xorg mesa mesa-demos xf86-video-intel intel-ucode gnome gufw
 ```
----
-6. Configure the system
+
+### Settings
 
 Fstab
 ```
@@ -116,8 +122,8 @@ Network configuration
 ```
 # echo kuze > /etc/hostname
 ```
----
-7. Grub bootloader
+
+### Bootloader
 
 Install grub
 ```
@@ -127,8 +133,8 @@ Configure grub
 ```
 # grub-mkconfig -o /boot/grub/grub.cfg
 ```
----
-8. Users
+
+### Personal user
 
 Set root password
 ```
@@ -146,12 +152,13 @@ Enable wheel group to personal-user
 ```
 # nano /etc/sudoers
 ```
----
-9. Last things
+
+### Last things
 
 Enable services
 ```
 # systemctl enable NetworkManager.service
+# systemctl enable ufw.service
 # systemctl enable gdm.service
 ```
 Reboot system
