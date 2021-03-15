@@ -11,7 +11,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: $accent;
 
   &:hover {
     background: $text;
@@ -591,7 +591,7 @@ hr.post-end {
     opacity: .8;
     &:hover {
       background: none;
-      color: $theme;
+      color: $accent;
       opacity: 1;
     }
 
@@ -648,7 +648,7 @@ a.footnote-ref {
 
   &:hover{
     box-shadow: none;
-    background-color: $theme;
+    background-color: $accent;
     transition-property: background-color;
   }
 }
@@ -663,7 +663,7 @@ a.footnote-ref {
   }
 
   a:hover {
-    border-bottom: 1px solid $theme;
+    border-bottom: 1px solid $accent;
   }
 
   svg {
@@ -711,7 +711,7 @@ a.footnote-ref {
   }
 
   a:hover {
-    border-bottom: $theme 1px solid;
+    border-bottom: $accent 1px solid;
   }
 }
 
