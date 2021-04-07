@@ -58,8 +58,7 @@ enableEmoji = true  # Shorthand emojis in content files - https://gohugo.io/func
   # Check https://github.com/Track3/hermit#social-icons for more info.
    [[params.social]]
     name = "resume"
-    url = "https://drive.google.com/file/d/14ZZtXc_69hmNvmBl9r0q760UsvX4o8Z1/view?usp=sharing"
- 
+    url = "https://github.com/aleoponcelet/aleoponcelet.com/raw/main/content/cv_resume.pdf"
   [[params.social]]
     name = "twitter"
     url = "https://twitter.com/aleoponcelet"
