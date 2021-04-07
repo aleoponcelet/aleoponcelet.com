@@ -56,21 +56,24 @@ enableEmoji = true  # Shorthand emojis in content files - https://gohugo.io/func
 
   # Social Icons
   # Check https://github.com/Track3/hermit#social-icons for more info.
+   [[params.social]]
+    name = "resume"
+    url = "https://drive.google.com/file/d/14ZZtXc_69hmNvmBl9r0q760UsvX4o8Z1/view?usp=sharing"
+ 
   [[params.social]]
     name = "twitter"
     url = "https://twitter.com/aleoponcelet"
-
   [[params.social]]
     name = "email"
     url = "mailto:aleoponcelet@gmail.com"
-
   [[params.social]]
     name = "github"
     url = "https://github.com/aleoponcelet"
-
   [[params.social]]
     name = "paypal"
     url = "https://paypal.me/aleoponcelet"
+
+ 
 
 [menu]
 
@@ -79,7 +82,7 @@ enableEmoji = true  # Shorthand emojis in content files - https://gohugo.io/func
     url = "posts/"
     weight = 10
 
-  [[menu.main]]
-    name = "About"
-    url = "about/"
-    weight = 20
+#  [[menu.main]]
+#    name = "About"
+#    url = "about/"
+#    weight = 20
