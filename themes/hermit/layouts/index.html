@@ -29,6 +29,12 @@
 		</div>
 		<div id="home-footer">
 			<p>
+				<audio loop autoplay>
+					<source src="/3311.mp3" type="audio/mpeg">
+					Your browser does not support the audio element.
+				  </audio>
+			</p>
+			<p>
 				&copy; {{ now.Format "2006" }} <a href="{{ .Site.BaseURL }}">{{ .Site.Author.name }}</a>{{ .Site.Params.footerCopyright | safeHTML }}
 			</p>
 		</div>
