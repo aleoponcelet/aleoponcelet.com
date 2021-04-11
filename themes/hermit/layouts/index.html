@@ -28,10 +28,11 @@
 			</nav>
 		</div>
 		<div id="home-footer">
-				<audio loop autoplay src="/3311.mp3">
-            		Your browser does not support the
-            		<code>audio</code> element.
+			<figure>
+				<audio preload="auto" loop autoplay src="/3311.mp3">
+            		Your browser does not support the <code>audio</code> element.
     			</audio>
+			</figure>
 			<p>
 				&copy; {{ now.Format "2006" }} <a href="{{ .Site.BaseURL }}">{{ .Site.Author.name }}</a>{{ .Site.Params.footerCopyright | safeHTML }}
 			</p>
