@@ -170,4 +170,4 @@ Reboot system
 Tools
 - [yay](https://github.com/Jguer/yay#installation)
 - [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh#manual-installation)
-- [dotfiles](https://gist.github.com/aleoponcelet)
+- [nvm](https://github.com/nvm-sh/nvm#about)
