@@ -1,5 +1,5 @@
 ---
-title: 'How I install Arch Linux'
+title: 'Arch Linux - Installation guide'
 date: 2021-02-27T15:00:11+06:00
 draft: false
 featuredImg: ""
@@ -167,3 +167,7 @@ Reboot system
 # umount -R /mnt
 # reboot
 ```
+Tools
+- [yay](https://github.com/Jguer/yay#installation)
+- [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh#manual-installation)
+- [dotfiles](https://gist.github.com/aleoponcelet)

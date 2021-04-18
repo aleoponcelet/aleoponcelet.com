@@ -1,5 +1,5 @@
 ---
-title: 'Git Cheat Sheet'
+title: 'Git - Cheat Sheet'
 date: 2021-03-14T15:00:11+06:00
 draft: false
 featuredImg: ""
