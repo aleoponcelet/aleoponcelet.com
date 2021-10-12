@@ -13,7 +13,7 @@ Dell Inspiron 3480
 - [Settings](#settings)
 - [Bootloader](#bootloader)
 - [Personal user](#personal-user)
-- [Last steps](#last-things)
+- [Last steps](#last-steps)
 
 
 ### First steps
