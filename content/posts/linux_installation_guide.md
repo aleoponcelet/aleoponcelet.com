@@ -13,7 +13,7 @@ Dell Inspiron 3480
 - [Settings](#settings)
 - [Bootloader](#bootloader)
 - [Personal user](#personal-user)
-- [Last things](#last-things)
+- [Last steps](#last-things)
 
 
 ### First steps
@@ -40,16 +40,15 @@ Update the system clock
 Partition the disks
 ```
 # fdisk -l
-# cfdisk /dev/nvme0n1
+# cfdisk /dev/sda
 ```
 GUID Partition Table (gpt)
 
-| Partition  | Size  | Usage |
+| Partition  | Size  | Type |
 | :------------ | :-------------: | ------------: |
-| nvme0n1p1	    | 1 GB |         EFI |
-| nvme0n1p2	    |    40 GB     |           /root |
-| nvme0n1p3	    |    185 GB     |            /home |
-| nvme0n1p4	    |    7 GB     |            swap |
+| /dev/sda1    | 488M |         EFI System|
+| /dev/sda2    |    225G     |           Linux filesystem |
+| /dev/sda3    |    7.4G     |            Linux swap|
 
 ---
 ### Installation
@@ -58,28 +57,21 @@ GUID Partition Table (gpt)
 ```
 # mkfs.vfat -F32 /dev/sda1
 # mkfs.ext4 /dev/sda2
-# mkfs.ext4 /dev/sda3
-# mkswap /dev/sda4
-# swapon /dev/sda4
+# mkswap /dev/sda3
+# swapon /dev/sda3
 ```
 * Mount
 ```
 mount /dev/sda2 /mnt
-mkdir /mnt/home
-mkdir -p /mnt/boot/efi
-mount /dev/sda1 /mnt/boot/efi
-mount /dev/sda3 /mnt/home
 ```
 * Install
 
-Select the mirrors
+Sync repos
 ```
-# pacstrap /mnt reflector
-# cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak
-# reflector --latest 200 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist
+# pacman -Syy
 ```
-
 Essential packages
+
 ```
 # pacstrap /mnt base base-devel efibootmgr grub linux linux-firmware
 ```
@@ -87,13 +79,13 @@ Complement packages
 ```
 # pacstrap /mnt zsh git go xdg-user-dirs nano networkmanager dhcpcd netctl wpa_supplicant dialog xorg mesa mesa-demos xf86-video-intel intel-ucode gnome gufw
 ```
+Fonts
+```
+# pacstrap /mnt ttf-dejavu ttf-liberation noto-fonts noto-fonts-cjk noto-fonts-emoji cantarell-fonts inter-font ttf-droid ttf-roboto ttf-ubuntu-font-family
+```
 
 ### Settings
 
-Fstab
-```
-# genfstab -p /mnt >> /mnt/etc/fstab
-```
 Chroot
 ```
 # arch-chroot /mnt
@@ -120,13 +112,22 @@ Set a Spanish keyboard layout
 Network configuration
 
 ```
-# echo kuze > /etc/hostname
+# echo inspiron > /etc/hostname
 ```
-
+Host file
+```
+# nano /etc/hosts
+---
+127.0.0.1 localhost
+::1 localhost
+127.0.1.1 inspiron
+```
 ### Bootloader
 
 Install grub
 ```
+# mkdir /boot/efi
+# mount /dev/sda1 /boot/efi
 # grub-install --efi-directory=/boot/efi --bootloader-id=GRUB --target=x86_64-efi
 ```
 Configure grub
@@ -153,7 +154,7 @@ Enable wheel group to personal-user
 # nano /etc/sudoers
 ```
 
-### Last things
+### Last steps
 
 Enable services
 ```
@@ -161,9 +162,11 @@ Enable services
 # systemctl enable ufw.service
 # systemctl enable gdm.service
 ```
+
 Reboot system
 ```
 # exit
+# genfstab -U /mnt >> /mnt/etc/fstab
 # umount -R /mnt
 # reboot
 ```
