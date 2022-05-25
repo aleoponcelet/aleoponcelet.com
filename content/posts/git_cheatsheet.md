@@ -24,7 +24,7 @@ Git on the commandline
 Configuring user information used across all local repositories
 ```
 $ git config --global user.name "Alejandro Ponce"
-$ git config --global user.email "aleo.poncelet@gmail.com"
+$ git config --global user.email "alejandro.poncelet@icloud.com"
 $ git config --global color.ui auto
 ```
 
