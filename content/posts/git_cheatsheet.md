@@ -32,7 +32,7 @@ $ git config --global color.ui auto
 
 Connecting to GitHub with SSH 
 ```
-$ ssh-keygen -t ed25519 -C "aleo.poncelet@gmail.com"
+$ ssh-keygen -t ed25519 -C "alejandro.poncelet@icloud.com"
 $ eval "$(ssh-agent -s)"
 > Agent pid 59566
 $ ssh-add ~/.ssh/id_ed25519
