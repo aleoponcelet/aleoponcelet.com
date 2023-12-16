@@ -24,7 +24,7 @@ Git on the commandline
 Configuring user information used across all local repositories
 ```
 $ git config --global user.name "Alejandro Ponce"
-$ git config --global user.email "alejandro.poncelet@icloud.com"
+$ git config --global user.email "alejandro.poncet@icloud.com"
 $ git config --global color.ui auto
 ```
 
@@ -32,7 +32,7 @@ $ git config --global color.ui auto
 
 Connecting to GitHub with SSH 
 ```
-$ ssh-keygen -t ed25519 -C "alejandro.poncelet@icloud.com"
+$ ssh-keygen -t ed25519 -C "alejandro.poncet@icloud.com"
 $ eval "$(ssh-agent -s)"
 > Agent pid 59566
 $ ssh-add ~/.ssh/id_ed25519
